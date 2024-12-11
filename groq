@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Execute the main script with all arguments
+"/usr/local/lib/groq/groq.sh" "$@" 
