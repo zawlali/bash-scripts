@@ -1,12 +1,12 @@
 #!/bin/bash
 
-CURSOR_DIR="/home/zawl/Applications"
+CURSOR_DIR="$HOME/Applications"
 LATEST_CURSOR=$(ls -t "$CURSOR_DIR"/cursor-*.AppImage | head -n1)
 
 if [ -n "$LATEST_CURSOR" ]; then
     if [ $# -eq 0 ]; then
         # No arguments, open in current directory
-        exec "$LATEST_CURSOR" "$(pwd)"
+        exec "$LATEST_CURSOR"
     else
         # Open in specified directory
         exec "$LATEST_CURSOR" "$1"
