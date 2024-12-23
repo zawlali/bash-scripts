@@ -4,7 +4,7 @@
 
 # Define the paths
 INSTALL_DIR="$HOME/Applications"
-LAUNCHER_SCRIPT="$INSTALL_DIR/launch-cursor.v2.sh"
+LAUNCHER_SCRIPT="$INSTALL_DIR/launch-cursor.sh"
 COMMAND_NAME="cursor"
 SYSTEM_BIN="/usr/local/bin/$COMMAND_NAME"
 
@@ -18,10 +18,10 @@ LATEST_CURSOR=$(ls -t "$CURSOR_DIR"/cursor-*.AppImage | head -n1)
 if [ -n "$LATEST_CURSOR" ]; then
     if [ $# -eq 0 ]; then
         # No arguments, open in current directory
-        exec "$LATEST_CURSOR"
+        nohup "$LATEST_CURSOR" > /dev/null 2>&1 &
     else
         # Open in specified directory
-        exec "$LATEST_CURSOR" "$1"
+        nohup "$LATEST_CURSOR" "$1" > /dev/null 2>&1 &
     fi
 else
     echo "No Cursor AppImage found in $CURSOR_DIR"
