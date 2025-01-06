@@ -10,7 +10,7 @@ fi
 
 # Check for API key
 if [ -z "$GROQ_API_KEY" ]; then
-  GROQ_API_KEY="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"
+  GROQ_API_KEY="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"
 fi
 
 # Initialize variables
